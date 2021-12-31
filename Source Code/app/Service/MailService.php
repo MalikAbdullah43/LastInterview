@@ -24,11 +24,10 @@ class MailService{
 
 
   //Sign Up Function For Mail Sending Towards Email
-    public static function mail($email)
+    public static function mail($email,$email_code)
     {
-        $details = ['title'=>'Hello Malik',
-                    'link' =>'http://' .$_SERVER['HTTP_HOST'].'/user/verification'.'/'.$email,
-                    'link1' =>'http://'.$_SERVER['HTTP_HOST'].'/user/regenrate'.'/'.$email];
+        $details = ['title'=>'Hello User',
+        'Your App Code is: '=>$email_code];
                     
                     dispatch(new SignupEmailJob($details));
                     return true;     

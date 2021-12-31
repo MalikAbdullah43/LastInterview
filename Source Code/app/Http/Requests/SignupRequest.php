@@ -39,6 +39,7 @@ class SignupRequest extends FormRequest
                 'regex:/[@$!%*#?&]/', // must contain a special character
                 
             ],
+           // 'mobile_no' => 'required|numeric|size:11',
         ];
     }
     public function failedValidation(Validator $validator)

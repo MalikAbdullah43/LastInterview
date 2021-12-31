@@ -18,10 +18,8 @@ class Auths extends Migration
             $table->string('email_code')->unique();
             $table->timestamp('mobile_code')->unique();
             $table->string('auth_code');
-            $table->string('kyc_img',1000);
             $table->timestamp('exp_time')->nullable();
             $table->boolean('active1');
-            $table->boolean('active2');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 

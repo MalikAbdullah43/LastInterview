@@ -19,6 +19,7 @@ class CheckEmail
      */
     public function handle(Request $request, Closure $next)
     {
+        dd("User");
         app('App\Http\Requests\LoginRequest');
         $password  = $request->password;  //Hashing Purpose
         

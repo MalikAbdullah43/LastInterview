@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('mobile_n')->length(11)->unique();
             $table->string('password')->nullable(false);
             $table->string('jwt')->nullable();
+            $table->string('email_verified_at')->default('NULL');
             $table->timestamp('exp_time')->nullable();
         
         });

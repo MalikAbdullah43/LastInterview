@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Cards extends Migration
+class Kycs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class Cards extends Migration
      */
     public function up()
     {
-        Schema::create('cards', function (Blueprint $table) {
+        Schema::create('kycs', function (Blueprint $table) {
 
             $table->id();
-            $table->integer('card_no')->length(16);
-            $table->integer('cvc')->length(3);
-            $table->string('jwt', 1000)->change();
-            $table->timestamp('exp_date')->nullable();
+            $table->string('id_image');
+            $table->string('utility_bill_image');
+            $table->string('consignmnet');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            
+        
         });
     }
 
@@ -32,6 +33,6 @@ class Cards extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cards');
+        Schema::dropIfExists('kycs');
     }
 }
